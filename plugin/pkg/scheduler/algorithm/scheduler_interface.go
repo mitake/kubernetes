@@ -46,7 +46,7 @@ type SchedulerExtender interface {
 // ScheduleAlgorithm is an interface implemented by things that know how to schedule pods
 // onto machines.
 type ScheduleAlgorithm interface {
-	Schedule(*v1.Pod, NodeLister) (selectedMachine string, err error)
+	Schedule(*v1.Pod, NodeLister) (selectedMachine *v1.Node, err error)
 	// Predicates() returns a pointer to a map of predicate functions. This is
 	// exposed for testing.
 	Predicates() map[string]FitPredicate

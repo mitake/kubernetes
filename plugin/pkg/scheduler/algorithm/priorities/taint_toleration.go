@@ -68,7 +68,7 @@ func ComputeTaintTolerationPriorityMap(pod *v1.Pod, meta interface{}, nodeInfo *
 	}
 
 	return schedulerapi.HostPriority{
-		Host:  node.Name,
+		Host:  node,
 		Score: countIntolerableTaintsPreferNoSchedule(node.Spec.Taints, tolerationsPreferNoSchedule),
 	}, nil
 }
